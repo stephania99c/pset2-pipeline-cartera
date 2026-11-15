@@ -1,0 +1,14 @@
+# Credenciales
+.env
+
+# Datos (nunca se suben; vienen del release datos-v1)
+data/
+*.csv
+
+# dbt
+dbt/target/
+dbt/logs/
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
