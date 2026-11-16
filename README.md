@@ -9,7 +9,7 @@ Fuente (GitHub Release) → Kestra → RAW → dbt → BRONZE → dbt → SILVER
 ```
 
 > **Datos:** todos los datos son **anonimizados y sintéticos** (identificadores seudonimizados y montos perturbados).
-> Los datos reales nunca salen del equipo de la autora. La fuente pública es el Release
+> Los datos reales nunca salieron de mi equipo. La fuente pública es el Release
 > [`datos-v1`](https://github.com/stephania99c/pset2-pipeline-cartera/releases/tag/datos-v1).
 
 ## Estructura del repositorio
@@ -93,4 +93,4 @@ Imprime las validaciones del grano y guarda `CARTERA.GOLD.OBT_CARTERA_DIARIA`.
 
 ## Uso de IA
 
-Para este trabajo se utilizó un asistente de IA (Claude) como apoyo para escribir y explicar el código. Las decisiones de negocio (alcance, reglas de calidad y su justificación) provienen del conocimiento de la autora sobre el proceso de cobranzas.
+Para este trabajo utilicé un asistente de IA (Claude) como apoyo para escribir y explicar el código. Las decisiones de negocio (alcance, reglas de calidad y su justificación) se basan en mi conocimiento del proceso de cobranzas.
