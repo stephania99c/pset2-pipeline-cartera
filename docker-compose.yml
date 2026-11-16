@@ -37,5 +37,14 @@ services:
       - ./dbt:/app/dbt
     entrypoint: ["dbt"]
 
+  spark:
+    image: pset2-tools:1.0
+    profiles: ["herramientas"]
+    env_file: .env
+    working_dir: /app/spark
+    volumes:
+      - ./spark:/app/spark
+    entrypoint: ["spark-submit", "--driver-memory", "4g"]
+
 volumes:
   kestra-data:
