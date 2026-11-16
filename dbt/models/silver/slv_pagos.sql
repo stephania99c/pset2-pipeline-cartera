@@ -1,6 +1,6 @@
 -- SILVER: pagos con reglas de negocio marcadas. No se elimina ningun pago.
 --  * Los pagos identicos se conservan (pueden ser legitimos) y se marcan como posible duplicado.
---  * Los reversados se marcan para no sumarlos como recaudo.
+--  * Se marcan los pagos aplicados y los de motivo RECAUDACION (los unicos que cuentan como recaudo).
 with numerados as (
     select
         *,
@@ -29,5 +29,6 @@ select
     motivo,
     copia > 1                           as es_posible_duplicado,
     estado = 'APLICADA'                 as es_aplicado,
+    motivo = 'RECAUDACION'              as es_recaudacion,
     substr(numero_operacion, 10) = ''   as es_auto
 from numerados
