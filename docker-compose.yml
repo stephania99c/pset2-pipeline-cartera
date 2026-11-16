@@ -3,8 +3,7 @@ services:
     image: kestra/kestra:latest
     command: server local
     user: "root"
-    ports:
-      - "8080:8080"
+    ports: ["8080:8080"]
     environment:
       ENV_SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT}
       ENV_SNOWFLAKE_USER: ${SNOWFLAKE_USER}
@@ -26,6 +25,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/kestra-wd:/tmp/kestra-wd
       - kestra-data:/app/storage
+
+  dbt:
+    image: pset2-tools:1.0
+    profiles: ["herramientas"]
+    env_file: .env
+    environment:
+      DBT_PROFILES_DIR: /app/dbt
+    working_dir: /app/dbt
+    volumes:
+      - ./dbt:/app/dbt
+    entrypoint: ["dbt"]
 
 volumes:
   kestra-data:
